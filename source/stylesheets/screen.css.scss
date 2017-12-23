@@ -40,6 +40,10 @@ html, body {
 // TABLE OF CONTENTS
 ////////////////////////////////////////////////////////////////////////////////
 
+#toc {
+  margin-top: 6px;
+}
+
 #toc > ul > li > a > span {
   float: right;
   background-color: #2484FF;
@@ -59,8 +63,8 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 13px;
-  font-weight: bold;
+  font-size: 14px;
+  border-right: 1px solid #f0f4f7;
 
   // language selector for mobile devices
   .lang-selector {
@@ -169,18 +173,17 @@ html, body {
   .toc-list-h2 {
     display: none;
     background-color: $nav-subitem-bg;
-    font-weight: 500;
   }
 
   .toc-h2 {
     padding-left: $nav-padding + $nav-indent;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .toc-footer {
     padding: 1em 0;
     margin-top: 1em;
-    border-top: 1px dashed $nav-footer-border-color;
+    border-top: 1px solid $nav-footer-border-color;
 
     li,a {
       color: $nav-text;
@@ -206,7 +209,7 @@ html, body {
   white-space: nowrap;
   text-overflow: ellipsis;
   text-decoration: none;
-  color: #fff;
+  color: $nav-text;
   transition-property: background;
   transition-timing-function: linear;
   transition-duration: 130ms;
@@ -231,7 +234,6 @@ html, body {
   z-index: 100;
   color: #000;
   text-decoration: none;
-  font-weight: bold;
   opacity: 0.7;
   line-height: 16px;
   img {
@@ -277,22 +279,23 @@ html, body {
     position: fixed;
     z-index: 50;
     border-bottom: 5px solid $lang-select-active-bg;
+    padding: 8px;
   }
 }
 
 .lang-selector {
   background-color: $lang-select-bg;
   width: 100%;
-  font-weight: bold;
   a {
     display: block;
-    float:left;
+    float: left;
     color: $lang-select-text;
     text-decoration: none;
     padding: 0 10px;
     line-height: 30px;
     outline: 0;
-
+    border-radius: 3px;
+    
     &:active, &:focus {
       background-color: $lang-select-pressed-bg;
       color: $lang-select-pressed-text;
@@ -354,9 +357,6 @@ html, body {
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    background-color: #fdfdfd;
   }
 
   h1:first-child, div:first-child + h1 {
@@ -369,7 +369,6 @@ html, body {
     font-size: 19px;
     margin-top: 4em;
     margin-bottom: 0;
-    border-top: 1px solid #ccc;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
     background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
@@ -452,7 +451,12 @@ html, body {
   }
 
   code {
-    background-color: rgba(0,0,0,0.05);
+    //background-color: rgb(39, 43, 45);
+
+    background: #fafcfc;
+    border: 1px solid #f0f4f7;
+    border-radius: 4px;
+    color: #b93d6a;
     padding: 3px;
     border-radius: 3px;
     @extend %break-words;
@@ -461,6 +465,8 @@ html, body {
 
   pre>code {
     background-color: transparent;
+    border-width: 0;
+    color: #fafcfc;
     padding: 0;
   }
 
